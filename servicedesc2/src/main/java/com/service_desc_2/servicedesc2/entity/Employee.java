@@ -35,5 +35,5 @@ public class Employee {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    private User user;  // Связь с User
+    private User user;
 }
