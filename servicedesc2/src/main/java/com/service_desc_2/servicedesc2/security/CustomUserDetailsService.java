@@ -15,18 +15,11 @@ public class CustomUserDetailsService implements UserDetailsService {
         this.employeeRepository = employeeRepository;
     }
 
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        Employee employee = employeeRepository.findByEmail(username) // Предполагается, что email уникален
-//                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-//        return JwtUserDetails.build(employee);
-//    }
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Employee employee = employeeRepository.findByEmail(username)
                 .orElseThrow(() -> {
-                    System.out.println("User not found: " + username); // Логирование
+                    System.out.println("User not found: " + username); // Logging
                     return new UsernameNotFoundException("User not found");
                 });
         return JwtUserDetails.build(employee);
