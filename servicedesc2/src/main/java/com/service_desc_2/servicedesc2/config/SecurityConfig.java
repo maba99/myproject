@@ -23,15 +23,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(AbstractHttpConfigurer::disable) // Отключение CSRF для упрощения (не рекомендуется для продакшна)
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/roles/**").hasRole("SUPERADMIN")
                         .requestMatchers("/employees/**").hasAnyRole("ADMIN", "SUPERADMIN")
                         .requestMatchers("/tickets/**").hasAnyRole("USER", "ADMIN", "SUPERADMIN")
-                        .anyRequest().authenticated() // Все остальные запросы требуют аутентификации
+                        .anyRequest().authenticated() // All other requests require authentication
                 )
-                .formLogin(AbstractAuthenticationFilterConfigurer::permitAll) // Разрешение на вход для всех пользователей
-                .logout(LogoutConfigurer::permitAll);// Разрешение на выход для всех пользователей
+                .formLogin(AbstractAuthenticationFilterConfigurer::permitAll) // Login permission for all users
+                .logout(LogoutConfigurer::permitAll);// Logout permission for all users
 
         return http.build();
     }
