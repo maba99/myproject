@@ -39,7 +39,7 @@ public class JwtUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null; // Здесь вы можете вернуть пароль, если нужно
+        return null;
     }
 
     @Override
