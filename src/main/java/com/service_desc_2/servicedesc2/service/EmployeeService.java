@@ -4,12 +4,13 @@ import com.service_desc_2.servicedesc2.entity.Employee;
 import com.service_desc_2.servicedesc2.entity.Role;
 import com.service_desc_2.servicedesc2.repository.EmployeeRepository;
 import com.service_desc_2.servicedesc2.repository.RoleRepository;
+import com.service_desc_2.servicedesc2.service.impl.EmployeeServiceImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class EmployeeService {
+public class EmployeeService implements EmployeeServiceImpl {
     private final EmployeeRepository employeeRepository;
     private final RoleRepository roleRepository;
 

@@ -4,12 +4,13 @@ import com.service_desc_2.servicedesc2.entity.Employee;
 import com.service_desc_2.servicedesc2.entity.Ticket;
 import com.service_desc_2.servicedesc2.repository.EmployeeRepository;
 import com.service_desc_2.servicedesc2.repository.TicketRepository;
+import com.service_desc_2.servicedesc2.service.impl.TicketServiceImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class TicketService {
+public class TicketService implements TicketServiceImpl {
     private final TicketRepository ticketRepository;
     private final EmployeeRepository employeeRepository;
 
