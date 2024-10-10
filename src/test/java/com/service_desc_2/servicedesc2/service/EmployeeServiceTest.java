@@ -16,11 +16,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+
+//qwertyuiop[
 class EmployeeServiceTest {
 
     @Mock
     private EmployeeRepository employeeRepository;
 
+    @Mock
+    private RoleRepository roleRepository;
 
     @InjectMocks
     private EmployeeService employeeService;
