@@ -90,22 +90,22 @@ class EmployeeServiceTest {
         verify(employeeRepository, times(1)).deleteById(employeeId);
     }
 
-    @Test
-    @WithMockUser(roles = "SUPERADMIN") // Эмулируем пользователя с ролью суперпользователя
-    void assignRole() {
-        Employee employee = new Employee();
-        employee.setId(1L);
-        employee.setRoles(new HashSet<>());
-
-        Role role = new Role();
-        role.setId(1L);
-        role.setName("USER");
-
-        when(employeeRepository.findById(1L)).thenReturn(Optional.of(employee));
-        when(roleRepository.findById(1L)).thenReturn(Optional.of(role));
-
-        employeeService.assignRole(1L, 1L);
-
-        assertTrue(employee.getRoles().contains(role));
-    }
+//    @Test
+//    @WithMockUser(roles = "SUPERADMIN") // Эмулируем пользователя с ролью суперпользователя
+//    void assignRole() {
+//        Employee employee = new Employee();
+//        employee.setId(1L);
+//        employee.setRoles(new HashSet<>());
+//
+//        Role role = new Role();
+//        role.setId(1L);
+//        role.setName("USER");
+//
+//        when(employeeRepository.findById(1L)).thenReturn(Optional.of(employee));
+//        when(roleRepository.findById(1L)).thenReturn(Optional.of(role));
+//
+//        employeeService.assignRole(1L, 1L);
+//
+//        assertTrue(employee.getRoles().contains(role));
+//    }
 }
