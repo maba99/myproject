@@ -21,8 +21,6 @@ class EmployeeServiceTest {
     @Mock
     private EmployeeRepository employeeRepository;
 
-    @Mock
-    private RoleRepository roleRepository;
 
     @InjectMocks
     private EmployeeService employeeService;
