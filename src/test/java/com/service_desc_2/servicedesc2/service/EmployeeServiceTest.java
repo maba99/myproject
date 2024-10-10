@@ -1,21 +1,16 @@
 package com.service_desc_2.servicedesc2.service;
 
 import com.service_desc_2.servicedesc2.entity.Employee;
-import com.service_desc_2.servicedesc2.entity.Role;
 import com.service_desc_2.servicedesc2.repository.EmployeeRepository;
 import com.service_desc_2.servicedesc2.repository.RoleRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.security.test.context.support.WithMockUser;
 
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
